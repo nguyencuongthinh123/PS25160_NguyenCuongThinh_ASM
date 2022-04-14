@@ -1,0 +1,47 @@
+body{
+   background: antiquewhite;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1{text-align: center; color: darkgreen;}
+.nd{
+    margin: 0 auto;
+    position: relative;
+    width: 1300px;
+    height: 550px;
+}
+img{
+    width: 100%; 
+    height: 100%;
+    
+}
+.dong_cuoi{
+    text-align: center; 
+    color: darkgreen;
+    font-size: 20px;
+    
+}
+#dem{
+    margin: 0; padding: 10px 0;
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    background: black;
+}
+.dieuhuong i:first-child{
+    position: absolute;
+    top: 55%; left: 10px;
+    color: white;
+    font-size: 40px;
+}
+
+.dieuhuong i:last-child{
+    position: absolute;
+    top: 55%; right: 10px;
+    font-size: 40px;
+    color: white;
+}
+
+#pp{
+    border: 5px solid darkkhaki;
+}

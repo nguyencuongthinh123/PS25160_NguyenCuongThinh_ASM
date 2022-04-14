@@ -1,0 +1,132 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Nguyễn Cường Thịnh - Ps25160</title>
+        <link rel="stylesheet" href="css/dang_ky.css">
+    </head>
+
+<body>
+    <meta charset="utf-8">
+    <form action="xuly.php" id="frmDangKy" method="post">
+        <h2>Đăng ký Thành viên</h2>
+        <p>
+            <lable>Mã sinh viên</lable>
+            <input type="text" class="txt" id="masv">
+        </p>
+        <p>
+            <lable>Họ Tên</lable>
+            <input type="text" class="txt" id="ht">
+        </p>
+        <p>
+            <lable>Email</lable>
+            <input type="email" class="txt" id="em">
+        </p>
+        <lable>Giới Tính</lable>
+        <p class="txt" id="gt">
+            <input type="radio" value="Nam" name="phai" class="nn">Nam
+            <input type="radio" value="Nữ" name="phai" class="nn">Nữ
+        </p>
+        <lable>Sở thích</lable>
+        <p class="txt" id="st">
+            <input type="checkbox" name="st" id="n">Đọc sách
+            <input type="checkbox" name="st" id="n">Du lịch
+            <input type="checkbox" name="st" id="n">Ẩm thực
+            <input type="checkbox" name="st" id="n">Âm nhạc
+            <input type="checkbox" name="st" id="n">Khác
+        </p>
+        <p>
+            <lable>Quốc tịch</lable>
+            <select name="qt" class="txt" id="qt">
+                <option value="0">Chọn quốc tịch</option>
+                <option value="1">Việt Nam</option>
+                <option value="2">USA</option>
+                <option value="3">Khác</option>
+            </select>
+        </p>
+        <p>
+            <lable>Ghi chú</lable>
+            <textarea class="txt" id="gc" name="gc"></textarea>
+        </p>
+        <p>
+            <div id="baoloi"></div>
+            <button type="button" onclick="return kiemtra();" id="nut" class="dk">Đăng ký</button>
+            <button type="reset" id="nut">Làm lại</button>
+        </p>
+    </form>
+</body>
+<script>
+    function kiemtra() {
+        var loi = "";
+
+        var masv = document.getElementById("masv")
+        if(masv.value == ""){
+            masv.className= "loi";
+            loi += "Mã sinh viên không được để trống<br>"
+        }
+
+        var ht = document.getElementById("ht")
+        if (ht.value == "") {
+            ht.className = "loi";
+            loi += "Họ tên không dược bỏ trống<br>"
+        }
+        else if (ht.value.length >= 30) {
+            ht.className = "loi";
+            loi += "Họ tên quá nhiều kí tự<br>"
+        }
+        else if (isNaN(ht.value) == false) {
+            ht.className = "loi";
+            loi += "Họ tên không được chứa số<br>"
+        }
+        else { ht.className = "txt" };
+        
+        var em = document.getElementById("em")
+        if (em.value == "") {
+            em.className = "loi";
+            loi += "Email không dược bỏ trống<br>"
+        }
+        else { em.className = "txt" };
+        
+        dem = 0;
+        var arrphai = document.getElementsByName("phai");
+        for (var i = 0; i < arrphai.length; i++) {
+            if (arrphai[i].checked) dem++;
+        } 
+        if (dem == 0) {
+            document.getElementById("gt").className = "loi";
+            loi += "Phải chọn giới tính<br>"
+        }
+        else { document.getElementById("gt").className = "txt"; }
+        
+        var arrst = document.getElementsByName("st");
+        dem=0;
+        for (var i = 0; i < arrst.length; i++) {
+            if (arrst[i].checked) dem++;
+        } 
+        if (dem == 0) {
+            document.getElementById("st").className = "loi";
+            loi += "Phải chọn ít nhất 1 sở thích<br>"
+        }
+        else { document.getElementById("st").className = "txt"; }
+        
+        var qt= document.getElementById("qt");
+        if(qt.value==0){
+            qt.className = "loi";
+            loi += "Phải chọn quốc tịch<br>"
+        }
+        else{qt.className = "txt";}
+        
+        var gc=document.getElementById("gc")
+        if (gc.value.length >= 200) {
+            gc.className = "loi";
+            loi += "ghi chú quá nhiều kí tự<br>"
+        }
+        else{gc.className = "txt";}
+        
+        if (loi != "") {
+            document.getElementById("baoloi").innerHTML = loi;
+            return false;
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Nguyễn Cường Thịnh - Assignment</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/album.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    </head>
+    <body> 
+        <div class="nd" >
+            <h1>ALBUM HÌNH ẢNH ĐẸP VỀ SÔNG, HỒ, THÁC</h1>
+            <div id="pp">
+            <img id="hinh" src="hinh/1.jpg" >
+            <div class="dieuhuong">
+                <i class="fa fa-chevron-circle-left" onclick="prev()"></i>
+                <i class="fa fa-chevron-circle-right" onclick="next()"></i>
+            </div>
+            <p id="dem">1/8</p>
+            </div>
+            <hr>
+            <p class ="dong_cuoi"><em>Sưu tầm : Nguyễn Cường Thịnh</em></p>
+        </div>
+    </body>
+</html>
+<script>
+    var arr_hinh = [
+        "hinh/0.jpg",
+        "hinh/1.jpg",
+        "hinh/2.jpg",
+        "hinh/3.jpg",
+        "hinh/4.jpg",
+        "hinh/5.jpg",
+        "hinh/6.jpg",
+        "hinh/7.jpg",
+    ]
+    var index = 0;
+    function next(){
+        index++;
+        if(index >= arr_hinh.length) index = 0;
+        var hinh = document.getElementById("hinh");
+        hinh.src = arr_hinh[index];
+        document.getElementById("dem").innerHTML =(index +1) + "/" + arr_hinh.length ;
+    }
+    function prev(){
+        index--;
+        if(index<0) index = arr_hinh.length -1;
+        var hinh = document.getElementById("hinh");
+        hinh.src = arr_hinh[index];
+        document.getElementById("dem").innerHTML =(index +1) + "/" + arr_hinh.length ;
+    }
+    setInterval("next()",5000);
+</script>

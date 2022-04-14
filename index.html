@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Nguyễn Cường Thịnh - PS25160</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+        <link rel="stylesheet" href="css/index.css">
+    </head>
+    
+    <body>
+        <div class="giohang">
+            <a onclick="showcart()"><img src="hinh/cart.png"><span id="countsp">0</span></a>
+        </div>
+        <div id="showcart">
+            <table>
+                <tr>
+                    <th>STT</th>
+                    <th>Hình</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Đơn giá</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền ($)</th>
+                    <th>Xóa</th>
+                </tr>
+                <tbody id="mycart"> </tbody>
+            </table>
+            <br>
+            <a href="cart.html"> Thanh toán &rAarr;</a>
+            <button id="xoatatca" onclick="xoatatca()">Xóa tất cả</button>
+        </div> 
+        <div class="boxcenter">
+            <div class="row mb header">
+                <h1> SIÊU THỊ TRỰC TUYẾN</h1>
+            </div>
+    
+            <div class="row mb menu">
+                <ul>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="cart.html">Giỏ hàng</a></li>
+                    <li><a href="album.html">ALBUM</a></li>
+                    <li><a href="ban_hang.html">Bán hàng</a></li>
+                    <li><a href="phuongtrinh.html">Phương trình</a></li>
+                    <li><a href="dang_ky.html">Đăng ký</a></li>
+                    <li><a href="dangky_agular.html">Đăng ký (Agurlar JS)</a></li>
+                </ul>
+            </div>
+            <div class="row mb ">
+                <div class="row">
+                    <div class="banner mb">
+                        <div id="hinhdaidien">
+                            <img id="hinh" src="hinh/Hinh0.jpg" align='center' width="100%" height="100%"/>
+                            <div class="dieuhuong">
+                                <i class="fa fa-chevron-circle-left" onclick="prev()"></i>
+                                <i class="fa fa-chevron-circle-right" onclick="next()"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="boxsp mr">
+                        <div class="row img"><img src="hinh/Hinh0.jpg" alt=""></div>
+                        <p><span>200</span>K</p>
+                        <a href="#">Nón kết đen có đuôi</a>
+                        <input type="number" name="soluong" min="1" max="10" value="1">
+                        <button onclick="themvaogiohang(this)">Đặt hàng</button>
+                    </div>
+                    <div class="boxsp mr">
+                        <div class="row img"><img src="hinh/Hinh1.jpg" alt=""></div>
+                        <p><span>200</span>K</p>
+                        <a href="#">Nón mũ lưỡi trai bít đuôi</a>
+                        <input type="number" name="soluong" min="1" max="10" value="1">
+                        <button onclick="themvaogiohang(this)">Đặt hàng</button>
+                    </div>
+                    <div class="boxsp ">
+                        <div class="row img"><img src="hinh/Hinh2.jpg" alt=""></div>
+                        <p><span>200</span>K</p>
+                        <a href="#">Nón kết đen có họa tiết</a>
+                        <input type="number" name="soluong" min="1" max="10" value="1">
+                        <button onclick="themvaogiohang(this)">Đặt hàng</button>
+                    </div>
+                    <div class="boxsp mr">
+                        <div class="row img"><img src="hinh/Hinh3.jpg" alt=""></div>
+                        <p><span>200</span>K</p>
+                        <a href="#">Nón kết đen có chữ</a>
+                        <input type="number" name="soluong" min="1" max="10" value="1">
+                        <button onclick="themvaogiohang(this)">Đặt hàng</button>
+                    </div>
+                    <div class="boxsp mr">
+                        <div class="row img"><img src="hinh/Hinh4.jpg" alt=""></div>
+                        <p><span>200</span>K</p>
+                        <a href="#">Nón kết xanh</a>
+                        <input type="number" name="soluong" min="1" max="10" value="1">
+                        <button onclick="themvaogiohang(this)">Đặt hàng</button>
+                    </div>
+                    <div class="boxsp ">
+                        <div class="row img"><img src="hinh/Hinh5.jpg" alt=""></div>
+                        <p><span>200</span>K</p>
+                        <a href="#">Nón Kết cá sấu</a>
+                        <input type="number" name="soluong" min="1" max="10" value="1">
+                        <button onclick="themvaogiohang(this)">Đặt hàng</button>
+                    </div>
+                    <div class="boxsp mr">
+                        <div class="row img"><img src="hinh/Hinh6.jpg" alt=""></div>
+                        <p><span>200</span>K</p>
+                        <a href="#">Nón kết màu xanh da trời</a>
+                        <input type="number" name="soluong" min="1" max="10" value="1">
+                        <button onclick="themvaogiohang(this)">Đặt hàng</button>
+                    </div>
+                    <div class="boxsp mr">
+                        <div class="row img"><img src="hinh/Hinh7.jpg" alt=""></div>
+                        <p><span>200</span>K</p>
+                        <a href="#">Nón kết trắng</a>
+                        <input type="number" name="soluong" min="1" max="10" value="1" onchange="tinhlaidon();">
+                        <button onclick="themvaogiohang(this)">Đặt hàng</button>
+                    </div>
+                    <div class="boxsp ">
+                        <div class="row img"><img src="hinh/Hinh8.jpg" alt=""></div>
+                        <p><span>200</span>K</p>
+                        <a href="#">Nón sơn</a>
+                        <input type="number" name="soluong" min="1" max="10" value="1">
+                        <button onclick="themvaogiohang(this)">Đặt hàng</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb footer">
+                Nguyễn Cường Thịnh - PS25160
+            </div>
+    </body>
+</html>
+
+<script src="js/index.js"></script>
+<script>
+    showcountsp();
+</script>

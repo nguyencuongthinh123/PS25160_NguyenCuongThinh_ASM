@@ -1,0 +1,36 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: slategrey;
+}
+.conntainer{
+    width: 500px;
+}
+#tb{
+    text-align: center;
+    color: blueviolet;
+    font-weight: bold;
+    border: 5px solid white;
+    background-color: skyblue;
+}
+#tb th{
+    background: antiquewhite;
+}
+#tb td{
+    width: 70px;
+}
+h1{text-align: center; color: paleturquoise;}
+#mucgia {
+    text-align: center;
+    background-color: skyblue;
+    margin-left: 45%;
+    margin-bottom: 20px;
+    width: 10%;
+    height: 4%;
+}
+#sl{width: 100px; background-color: white; color: slateblue;
+    text-align: center;
+    padding: 5px;
+}
+.tong{
+    color:brown;
+}

@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <title>Nguyễn Cường Thịnh - Assignment</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/phuongtrinh.css">
+    </head>
+    <body>
+        <div class = "container">
+            <h3>Giải phương trình bậc 2 :  ax<sup>2</sup>+ bx + c = 0</h3>
+            <span>Số lần giải: <b id = "slg"></b></span>
+            <hr>
+            <form>
+                <p><label >Nhập số a :</label> <input type="text" id ="a"></p>
+                <p><label >Nhập số b :</label> <input type="text" id ="b"></p>
+                <p><label >Nhập số c :</label> <input type="text" id ="c"></p>
+                <button type="button" class="nut_khoa" disabled id="btngiai" onclick="ptb2.giai(); dem() "> GIẢI PT </button>
+                <button type="button" class="nut" id="btnchoso" onclick="choso()" > CHO SỐ </button>
+            </form>
+            <div id = "ket_qua"></div>
+            <p id = "dong_ho"></p>
+        </div>
+    </body>
+</html>
+<script>
+    function choso(){
+       var a = Math.round(Math.random()*10);
+       var b = Math.round(Math.random()*10);
+       var c = Math.round(Math.random()*10);
+       document.getElementById("a").value= a;
+       document.getElementById("b").value= b;
+       document.getElementById("c").value= c;
+       var btn = document.getElementById("btngiai");
+       btn.disabled = false;
+       btn.className = 'nut';
+    }
+</script>
+<script>
+    var ptb2 = {
+        giai:function () {
+            var a = document.getElementById("a").value;
+            var b = document.getElementById("b").value;
+            var c = document.getElementById("c").value;
+            if(a == 0){
+                //ptb1
+                if(b==0){
+                    if(c==0){
+                        document.getElementById("ket_qua").innerHTML = "<p>Phương trình có vô số nghiệm</p>";
+                    }else{
+                        document.getElementById("ket_qua").innerHTML = "<p>Phương trình vô nghiệm</p>";
+                    }
+                }else{
+                    var x =-c/b;
+                    str = `<p> Phương trình có nghiệm : ${x.toFixed(2)}</p>`;
+                    document.getElementById("ket_qua").innerHTML = str;
+                }
+            }else{
+                delta = b*b - 4*a*c;
+                if(delta < 0){
+                    document.getElementById("ket_qua").innerHTML = "<p>Phương trình vô nghiệm</p>";
+                }else if(delta == 0){
+                    var x = -b/(2*a);
+                    str = `<p> Phương trình có nghiệm kép : ${x.toFixed(2)}</p>`;
+                    document.getElementById("ket_qua").innerHTML = str;
+                }else{
+                    var x1 = (-b - Math.sqrt(delta)/(2*a));
+                    var x2 = (-b + Math.sqrt(delta)/(2*a));
+                    var tong = x1+x2;
+                    var tich = x1*x2;
+                    var str = `<p> Phuong trình có 2 nghiệm phân biệt </p>
+                              <p>x<sup>1</sup>= ${x1.toFixed(2)}</p>
+                              <p>x<sup>2</sup>= ${x2.toFixed(2)}</p>
+                              <p>Tổng 2 ngiệm là = ${tong.toFixed(2)}</p>
+                              <p>Tích 2 ngiệm là = ${tich.toFixed(2)}</p>`;
+                    document.getElementById("ket_qua").innerHTML = str;
+                }
+            }
+            var btn = document.getElementById("btngiai");
+            btn.disabled = true;
+            btn.className = 'nut_khoa';
+        }
+    }
+</script>
+<script>
+    var slg = 0;
+    function dem() {
+        slg++;
+        document.getElementById("slg").innerHTML = slg;
+    }
+</script>
+<script>
+    function tg(){
+        var d = new Date();
+        var nam = d.getFullYear();
+        var thang = d.getMonth()+1;
+        var ngay = d.getDate();
+        var gio = d.getHours();
+        var phut = d.getMinutes();
+        var giay = d.getSeconds();
+        var str = `<p>Bây giờ là : ${ngay}/${thang}/${nam} ~ ${gio}:${phut}:${giay}</p>`;
+        document.getElementById("dong_ho").innerHTML = str;
+    }
+    setInterval("tg()", 1000);
+</script>

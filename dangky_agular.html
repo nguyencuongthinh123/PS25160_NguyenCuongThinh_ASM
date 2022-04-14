@@ -1,0 +1,134 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Nguyễn Cường Thịnh - Ps25160</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"> </script>
+        <style>
+            body { background-color: lightblue; }
+            .container {
+                width: 700px;
+                margin: 50px auto;
+                border: 1px solid grey;
+                border-radius: 16px;
+                background-color: lightgoldenrodyellow;
+                color: darkgoldenrod;
+            }
+            #frm{
+                margin-left: 30px;
+            }
+            h2 {
+                margin: 20px 0;
+                font-weight: bold;
+                text-align: center;
+            }
+            lable {
+                padding: 5px 5px;
+                font-weight: bold;
+            }
+            .txt {
+                width: 630px;
+                padding: 10px 15px;
+                margin-top: 5px;
+                border: 1px solid darkblue;
+                border-radius: 5px;
+                font-weight: bold;
+                margin-bottom: 10px;
+                background-color: lightgoldenrodyellow;
+                color: purple;
+            }
+            #nut {
+                padding: 10px 20px;
+                color: white;
+                border: 1px solid darkblue;
+                background-color: darkcyan;
+                font-weight: bold;
+                border-radius: 5px;
+                margin-left: 170px;
+            }
+    
+            #nut:hover {
+                background-color: rgb(2, 165, 2);
+            }
+            #text {
+                color: red;
+                font-weight: bold;
+                padding-left: 6px;
+                font-style: italic;
+                margin-top: 10px;
+            }
+            #fr1{
+                width: 600px;
+                border: 1px solid darkblue;
+            }
+        </style>
+        </head>
+        <body ng-app="b1" ng-controller="ctr1">
+            <div class="container">
+                <form action="xuly.php" id="frm" method="post">
+                    <h2>Đăng ký Thành viên</h2>
+                    <p>
+                        <lable>Mã sinh viên</lable><br>
+                        <input type="text" class="txt"  ng-model="masv" required minlength="5" maxlength="7"><br>
+                        <em ng-if="!masv" class="textdanger h6" id="text">Nhập mã sinh viên từ 5 đến 7 ký tự</em>
+                    </p>
+                    <p>
+                        <lable>Họ Tên</lable><br>
+                        <input type="text" class="txt" ng-model="ten" required minlength="6" maxlength="30"><br>
+                        <em ng-if="!ten" class="textdanger h6" id="text">Nhập tên của mình từ 6 đến 30 ký tự</em>
+                    </p>
+                    <p>
+                        <lable>Email</lable><br>
+                        <input type="text" class="txt" ng-model="em" required minlength="1" maxlength="50"><br>
+                        <em ng-if="!em" class="textdanger h6" id="text">Nhập email của mình tối đa 50 ký tự</em>
+                    </p>
+                    <fieldset id="fr1">
+                    <legend>Giới Tính</legend>
+                        <p class="gt">
+                            <input type="radio" value="Nam" name="phai" ng-model="gt">Nam
+                            <input type="radio" value="Nữ" name="phai" ng-model="gt">Nữ
+                        </p>
+                    </fieldset>
+                    <em ng-if="!gt" class="textdanger h6" id="text">Chọn giới tính</em>
+                    <fieldset id="fr1">
+                        <legend>Sở thích</legend>
+                        <p >
+                            <input type="checkbox" name="st" ng-model="ds">Đọc sách
+                            <input type="checkbox" name="st" ng-model="dl">Du lịch
+                            <input type="checkbox" name="st" ng-model="am">Ẩm thực
+                            <input type="checkbox" name="st" ng-model="an">Âm nhạc
+                            <input type="checkbox" name="st" ng-model="k">Khác
+                            
+                        </p>
+                    </fieldset>
+                    <em ng-if="!ds && !dl && !am && !an && !k" class="textdanger h6" id="text">Vui lòng chọn sở thích</em>
+                    <p>
+                        <lable>Quốc tịch</lable><br>
+                        <select name="qt" class="txt" id="qt" ng-model="qt">
+                            <option value="0">Chọn quốc tịch</option>
+                            <option value="1">Việt Nam</option>
+                            <option value="2">USA</option>
+                            <option value="3">Khác</option>
+                        </select><br>
+                        <em ng-if="!qt || qt==0" class="text-danger h6" id="text">Hãy chọn quốc tịch của mình</em>
+                    </p>
+                    <p>
+                        <lable>Ghi chú</lable><br>
+                        <textarea class="txt" id="gc" name="gc" ng-model="gc" required minlength="20" maxlength="200"></textarea><br>
+                        <em ng-if="!gc" class="textdanger h6" id="text">Ghi chú giới hạn từ 20 đến 200 ký tự </em>
+                    </p>
+                    <p>
+                        <button type="button" id="nut">Đăng ký</button>
+                        <button type="reset" id="nut">Làm lại</button>
+                    </p>
+                </form>
+            </div>
+            </body>
+</html>
+
+<script>
+    app= angular.module("b1",[]);
+    app.controller("ctr1",xuly);
+    function xuly($scope){
+        //code xử lý
+    }
+</script>

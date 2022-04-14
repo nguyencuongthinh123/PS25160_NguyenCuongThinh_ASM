@@ -1,0 +1,28 @@
+body{ background-color: silver}
+.container{
+    width: 500px;
+    
+    margin: auto;
+    background-color: darkcyan; color: white;
+    font-size: 22px; text-align: center;
+    border: 2px solid white;
+    border-radius: 15px;
+}
+form input {
+    width: 200px; text-align: center;
+    padding: 6px 0;
+    border: 2px solid black;
+    background-color: blanchedalmond;
+}
+form button {
+    width: 120px; height: 40px; margin-left: 10px; margin-right: 10px;
+}
+.nut{ background-color: lightblue; color: white;}
+.nut_khoa{background-color: tan; color: white;}
+#slg{ color: yellow;}
+#ket_qua{
+    border: 1px solid white;
+    height: 250px; margin: 10px 50px 0 50px ;
+    color: white;
+}
+#dong_ho{ color: yellow; font-style: italic;}
